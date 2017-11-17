@@ -8,14 +8,15 @@ import Nav from './nav'
 import Error from './error'
 
 ReactDOM.render(
-    <Router>
+    // <Router basename="demo" forceRefresh={true}>
+    <Router basename="demo">
         <div>
             <Nav/>
             <Switch>
                 <Redirect from="/redirect" to="/componentb"/>
                 <Route exact path="/" component={Componenta}/>
                 <Route path="/componentb" component={Componentb}/>
-                <Route path="/componentc" component={Componentc}/>
+                <Route path="/componentc/:param/:a" component={Componentc}/>
                 <Route component={Error}/>
             </Switch>    
         </div>
